@@ -1,9 +1,9 @@
 let images = [
   {
-    url: "../img/laptop.png",
+    url: "./img/laptop.png",
   },
   {
-    url: "../img/laptop1.png",
+    url: "./img/laptop1.png",
   },
 ];
 
@@ -18,11 +18,7 @@ function initSlider() {
 
   function initImages() {
     images.forEach((image, index) => {
-      let imageDiv = `<div class="image n${index} ${
-        index === 0 ? "active" : ""
-      }" style="background-image:url(${
-        images[index].url
-      });" data-index="${index}"></div>`;
+      let imageDiv = `<div class="image n${index} ${index === 0 ? "active" : ""}" style="background-image:url(${images[index].url});" data-index="${index}"></div>`;
       sliderImages.innerHTML += imageDiv;
     });
   }
@@ -44,9 +40,7 @@ function initSlider() {
 
   function initDots() {
     images.forEach((image, index) => {
-      let dot = `<div class="slider_dots-item n${index} ${
-        index === 0 ? "active" : ""
-      }" data-index="${index}"></div>`;
+      let dot = `<div class="slider_dots-item n${index} ${index === 0 ? "active" : ""}" data-index="${index}"></div>`;
       sliderDots.innerHTML += dot;
     });
     sliderDots.querySelectorAll(".slider_dots-item").forEach((dot) => {
